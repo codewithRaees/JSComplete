@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello JS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+
+</head>
+
+<body>
+    <h1>Event Delgation</h1>
+    <p>when there is a parent container with multiple child, now when we setting any event like click event, it will
+        result unnessery memeory usage and
+        and load. now the other way is to set up event listener on parent container and use for all its childerns using
+        e.target property.
+        this is called event Delgation. here we have applied click event listener to remove cards, only on parent
+        container not on each individual child.
+    </p>
+    <div class="card">+</div>
+
+    <div class="container ">
+
+    </div>
+</body>
+
+</html>
