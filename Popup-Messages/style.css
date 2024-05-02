@@ -7,17 +7,33 @@
 body {
     background-color: #DECDAC;
 }
-
-.newsletter {
+.popup{
     background-color: white;
     width: 485px;
     height: 243px;
     border-radius: 28px;
-    position: fixed;
+    position: relative;
     margin: auto;
     inset: 0;
 }
-
+.popup img{
+    width: 160px;
+}
+.newsletter {
+    display: none;
+    background-color: white;
+    width: 485px;
+    height: 243px;
+    border-radius: 28px;
+    position: relative;
+    margin: auto;
+    inset: 0;
+}
+.main-wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height:485px;
+}
 .news-letter-text {
     background-color: #EBBF53;
     display: flex;
@@ -27,33 +43,75 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 187px;
-    height: 41px;
+    width: 230px;
+    height: 45px;
     border-radius: 14px;
     font-size: 22px;
     text-align: center;
     font-weight: 400;
     color: white;
-    font-family: heebo, sans-serif;
+    font-family: 'Heebo', sans-serif;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
-
+.footer-text{
+ font-size: 10px;   
+ font-family: 'Poppin', sans-serif;
+ text-align: center;
+    margin-bottom: 2px;
+}
 .main-wrapper {
     position: relative;
 }
-
+.son-wrapper{
+    display: flex;
+    margin: -30px 0 0 30px;
+}
 .curser-hand {
     position: absolute;
     bottom: 15%;
     right: 10%;
+}
+.popup-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin: 0 29px 10px ;
+    font-family: 'Inika', sans-serif;
+    font-weight: 400;
+}
+.heading-text{
+    font-size: 30px;
+    
+}
+.popup-text p{
+    font-size: 13px;
+}
+.popup-bottom-wrapper{
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media only screen and (max-width: 768px) {
     
     .newsletter {
         background-color: white;
-        width: 430px;
-        height: 200px;
+        width: 465px;
+        height: 243px;
+        
+    }
+    .popup {
+        background-color: white;
+        width: 465px;
+        height: 243px;
+    }
+    .popup img{
+        width: 150px;
     }
 }
 
@@ -63,8 +121,17 @@ body {
     .newsletter {
         background-color: white;
         width: 90%;
-        height: 30%;
+        height: 164px;
 
+    }
+    .popup {
+        background-color: white;
+        width: 90%;
+        height: 164px;
+
+    }
+    .popup img{
+        width: 100px;
     }
 
     .news-letter-text {
