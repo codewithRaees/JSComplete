@@ -8,6 +8,9 @@ body {
     background-color: #DECDAC;
 }
 .popup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: white;
     width: 485px;
     height: 243px;
@@ -91,10 +94,32 @@ body {
     font-size: 13px;
 }
 .popup-bottom-wrapper{
+    width: 340px;
     background: red;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 25px;
+}
+.email-textbox{
+    min-width: 240px;
+    padding: 11px;
+    border-radius: 26px;
+    background: #EEE8DD;
+    border: 1px solid #AFA187;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.submit-button{
+    min-width: 100px;
+    padding: 11px;
+    border-radius: 26px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background: #EBBF53;
+    border: 1px solid #EBBF53;
 }
 
 @media only screen and (max-width: 768px) {
