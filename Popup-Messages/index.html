@@ -12,14 +12,14 @@
         href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Inika:regular,700" rel="stylesheet" />
-    <Script src="main.js"></Script>
+    <Script src="main.js" defer></Script>
 
 </head>
 
 <body>
     <div class="main-wrapper">
         <div class="newsletter">
-            <div class="news-letter-text">Get Newsletter</div>
+            <div class="news-letter-text"><span>Get Newsletter</span></div>
             <div class="curser-hand">
                 <img src="./images/clarity_cursor-hand-click-line.png" alt="Cursor hand">
             </div>
@@ -33,12 +33,21 @@
                         <span class="heading-text">Don’t miss out.</span>
                         <p>Sign up for our newsletter to stay in the loop.</p>
                     </div>
+                    <div class="closeicon">
+                        <span class="icon">
+                            &#10006;
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="popup-bottom-wrapper">
                      <input type="text" placeholder="EMAIL ADDRESS" class="email-textbox">
                     <button type="submit" class="submit-button">Subscribe</button>
+                    
                 
+            </div>
+            <div class="errortext">
+                <p>enter valid email address!</p>
             </div>
         </div>
         <div class="footer-text">

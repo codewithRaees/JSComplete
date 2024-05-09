@@ -7,35 +7,62 @@
 body {
     background-color: #DECDAC;
 }
+input:focus {
+    border: 1px solid #aa9d86;
+    outline: 0;
+  }
 .popup{
-    display: flex;
+    /* display: none; */
     flex-direction: column;
     align-items: center;
     background-color: white;
     width: 485px;
     height: 243px;
     border-radius: 28px;
-    position: relative;
+    position: fixed;
     margin: auto;
     inset: 0;
+    box-shadow: 0 3px 4px 3px rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+    
+    transition: transform 0.4s ease-in-out;
+    
+    
+}
+.closeicon{
+    display: flex;
+    align-items: center;
+    margin-top: -50px;
+    font-size: 26px;
+    margin-right: 20px;
+}
+.icon{
+    cursor: pointer;
 }
 .popup img{
     width: 160px;
 }
 .newsletter {
-    display: none;
+    display: flex;
     background-color: white;
     width: 485px;
     height: 243px;
     border-radius: 28px;
-    position: relative;
+    position: fixed;
     margin: auto;
     inset: 0;
+    box-shadow: 0 3px 4px 3px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+    transition: transform 0.9s ease-in-out;
 }
 .main-wrapper{
     display: flex;
     flex-direction: column;
     min-height:485px;
+    position: fixed;
+    margin: auto;
+    justify-content: end;
+    inset: 0;
 }
 .news-letter-text {
     background-color: #EBBF53;
@@ -66,9 +93,7 @@ body {
  text-align: center;
     margin-bottom: 2px;
 }
-.main-wrapper {
-    position: relative;
-}
+
 .son-wrapper{
     display: flex;
     margin: -30px 0 0 30px;
@@ -95,20 +120,18 @@ body {
 }
 .popup-bottom-wrapper{
     width: 340px;
-    background: red;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    height: 40px;
-    border-radius: 20px;
     margin-top: 25px;
 }
 .email-textbox{
     min-width: 240px;
-    padding: 11px;
+    
+    min-height: 40px;
+    padding-left: 11px;
     border-radius: 26px;
     background: #EEE8DD;
-    border: 1px solid #AFA187;
+    border: 1px solid #e7d1aa;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
@@ -121,7 +144,54 @@ body {
     background: #EBBF53;
     border: 1px solid #EBBF53;
 }
+.showbox{
+    display: flex;
+    transform: scale(1);
+    
+}
+.hidebox{
+    /* display: none; */
+    transform: scale(0);
+}
+.news-letter-text {
+    width: 73%;
+}
 
+.curser-hand {
+    bottom: 1%;
+    right: 4%;
+}
+
+.curser-hand img {
+    width: 80%;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+.errortext {
+    display: none;
+    color: red;
+    min-width: 330px;
+    margin-top: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+}
+.shakeText{
+    animation: shake 0.5s;
+  animation-iteration-count: 1;
+}
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
 @media only screen and (max-width: 768px) {
     
     .newsletter {
@@ -139,10 +209,44 @@ body {
         width: 150px;
     }
 }
-
+@media only screen and (max-width: 360px) {
+.popup img{
+    display: none;
+}
+.popup-text {
+    margin: 15px 5px 10px;
+}
+.popup-bottom-wrapper{
+    flex-direction: column;
+}
+.popup-bottom-wrapper {
+    width: 189px;
+    margin-top: 5px;
+}
+.email-textbox {
+    min-width: 186px;
+    font-size: 11px;
+    border-radius: 26px;
+    margin-bottom: 7px;
+}
+.submit-button {
+    border-radius: 26px;
+}
+.errortext {
+    min-width: 180px;
+    margin: 0;
+}
+}
 @media only screen and (max-width: 480px) {
-   
-
+    .son-wrapper{
+        margin: 0 0 0 30px;
+    }
+    .heading-text {
+        font-size: 20px;
+    }
+    .news-letter-text{
+        font-size: 16px;
+    }
     .newsletter {
         background-color: white;
         width: 90%;
@@ -152,24 +256,20 @@ body {
     .popup {
         background-color: white;
         width: 90%;
-        height: 164px;
+        height: 200px;
 
     }
     .popup img{
         width: 100px;
+        height: 100px;
+        margin-top: -20px;
+        margin-left: 2px;
     }
-
-    .news-letter-text {
-        width: 73%;
-    }
-
-    .curser-hand {
-        bottom: 1%;
-        right: 4%;
-    }
-
     .curser-hand img {
         width: 50%;
         font-size: 1rem;
+        margin-bottom: 5px;
     }
-}
+    }
+
+
