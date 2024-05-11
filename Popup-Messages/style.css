@@ -64,6 +64,22 @@ input:focus {
     justify-content: end;
     inset: 0;
 }
+.subscrition-box-text{
+  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    
+    font-size: 20px;
+    text-align: center;
+    
+    color: white;
+    font-family: 'Heebo', sans-serif;
+    cursor: pointer;
+    
+}
 .news-letter-text {
     background-color: #EBBF53;
     display: flex;
@@ -153,6 +169,7 @@ input:focus {
     /* display: none; */
     transform: scale(0);
 }
+
 .news-letter-text {
     width: 73%;
 }
@@ -167,7 +184,7 @@ input:focus {
     font-size: 1rem;
     margin-bottom: 5px;
 }
-.errortext {
+.errortext{
     display: none;
     color: red;
     min-width: 330px;
@@ -178,6 +195,24 @@ input:focus {
 .shakeText{
     animation: shake 0.5s;
   animation-iteration-count: 1;
+}
+.subscription-box {
+    display: flex;
+    background-color: green;
+    width: 485px;
+    height: 50px;
+    border-radius: 28px;
+    position: absolute;
+    margin: 20px auto;
+    inset: 0;
+    box-shadow: 0 3px 4px 3px rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+    transition: transform 0.9s ease-in-out;
+}
+.showsubscriptionbox{
+    /* display: none; */
+    transform: scale(1);
+    z-index: 999;
 }
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }

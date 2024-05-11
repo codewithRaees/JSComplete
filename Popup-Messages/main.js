@@ -5,6 +5,7 @@ const closebox = document.querySelector('.icon')
 const submit = document.querySelector('.submit-button')
 const email = document.querySelector('.email-textbox')
 const texterror = document.querySelector('.errortext')
+const subscriptionbox = document.querySelector('.subscription-box')
 
 getnewsletter.addEventListener('click', () => {
     newsletter.classList.add('hidebox')
@@ -19,11 +20,12 @@ closebox.addEventListener('click', () => {
     email.value = '';
     
 })
+// To Subscrition Box Message
 
 
 
 //Email validation function
-const errorToggle = false
+let errorToggle = false
 function validateEmail(sEmail) {
     var reEmail = /^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!\.)){0,61}[a-zA-Z0-9]?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/;
 
@@ -32,13 +34,13 @@ function validateEmail(sEmail) {
        
         return false;
     }
-
+    errorToggle= true
     return true;
-
+    
 }
 
 email.addEventListener("blur", function (e) {
-    validateEmail(e.target.value)
+   validateEmail(e.target.value)
 
 });
 // TO hide Error Text 
@@ -51,12 +53,25 @@ email.addEventListener('focus', () => {
 // Subsribed sucessfully box code
 
 submit.addEventListener('click', () => {
-    if (errorToggle) {
-        console.log("hi")
-        alert('Successfully subscribed')
+    
+    if(email.value< 0)
+        {
+            texterror.classList.remove('shakeText')
 
-    }
-    else { texterror.classList.add('shakeText') }
+        }else{
+                texterror.classList.remove('shakeText')
+                if (errorToggle ) {
+                    console.log("hi")
+                    email.value = '';
+                    subscriptionbox.classList.add('showsubscriptionbox')
+                    setTimeout(()=>{
+                        subscriptionbox.classList.remove('showsubscriptionbox')
+                        errorToggle = false
+                    },2000)
+            
+                }
+                else { texterror.classList.add('shakeText') }
+        }
 })
 // to Remove the sake class
 submit.addEventListener('mouseover', () => {
