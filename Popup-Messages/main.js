@@ -53,10 +53,11 @@ email.addEventListener('focus', () => {
 // Subsribed sucessfully box code
 
 submit.addEventListener('click', () => {
-    
-    if(email.value< 0)
+    var inputValueLength = email.value.length;
+    if(inputValueLength === 0)
         {
-            texterror.classList.remove('shakeText')
+            console.log(inputValueLength)
+            texterror.classList.add('shakeText')
 
         }else{
                 texterror.classList.remove('shakeText')

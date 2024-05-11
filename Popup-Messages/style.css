@@ -185,14 +185,16 @@ input:focus {
     margin-bottom: 5px;
 }
 .errortext{
-    display: none;
+    /* display: none; */
     color: red;
     min-width: 330px;
     margin-top: 6px;
     font-family: 'Poppins', sans-serif;
     font-size: 13px;
+    transform: scale(0);
 }
 .shakeText{
+    transform: scale(1);
     animation: shake 0.5s;
   animation-iteration-count: 1;
 }
