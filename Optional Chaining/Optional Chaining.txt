@@ -1,0 +1,4 @@
+Optional Chaining
+
+The Optional Chaining ?. operator accesses an object property. if the object
+accessed is undefined or null, then instead of throwing an error it gives results as an undefined.
